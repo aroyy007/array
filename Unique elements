@@ -1,0 +1,33 @@
+//C++ program to print all unique elements in array
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a[100], size, i, j, count;
+    cout << "Enter size of Array: ";
+    cin >> size;
+
+    for (i = 0; i < size; i++) {
+        cout << "Enter element " << i + 1 << ": ";
+        cin >> a[i];
+    }
+
+    for (i = 0; i < size; i++) {
+        count = 0;
+        if (a[i] != -1) {
+            for (j = 0; j < size; j++) {
+                if (a[i] == a[j]) {
+                    count++;
+                    if (i != j) {
+                        a[j] = -1;
+                    }
+                }
+            }
+        }
+        if (count == 1) {
+            cout << "Unique element: " << a[i] << endl;
+        }
+    }
+
+    return 0;
+}
