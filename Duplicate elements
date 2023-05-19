@@ -1,0 +1,27 @@
+//C++ program to count total number of duplicate elements in an array
+#include<iostream>
+using namespace std;
+int main()
+{
+    int a[100],size,i,j,count=0;
+    cout<<"Enter size of array : ";
+    cin>>size;
+    for(i=0;i<size;i++)
+    {
+        cout<<"Enter element "<<i+1<<" : ";
+        cin>>a[i];
+    }
+    for(i=0;i<size;i++)
+    {
+        for(j=i+1;j<size;j++)
+        {
+            if(a[i]==a[j])
+            {
+                count++;
+                break;
+            }
+        }
+    }
+    cout<<"Total number of duplicate elements in array : "<<count<<endl;
+    return 0;
+}
