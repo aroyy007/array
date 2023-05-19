@@ -1,0 +1,45 @@
+//C program to check whether a matrix is symmetric matrix or not
+#include<iostream>
+using namespace std;
+int main()
+{
+    int a[100][100],b[100][100],i,j,sym,size;
+    cout<<"Enter size of matrix a : ";
+    cin>>size;
+    for(i=0;i<size;i++)
+    {
+        for(j=0;j<size;j++)
+        {
+            cout<<"Enter element "<<"["<<i+1<<"]"<<"["<<j+1<<"]"<<": ";
+            cin>>a[i][j];
+        }
+        cout<<endl;
+    }
+    for(i=0;i<size;i++)
+    {
+        for(j=0;j<size;j++)
+        {
+            b[i][j]=a[j][i];
+        }
+    }
+    sym=1;
+    for(i=0;i<size;i++)
+    {
+        for(j=0;j<size;j++)
+        {
+            if(b[i][j]!=a[j][i])
+            {
+                sym=0;
+            }
+        }
+    }
+    if(sym==1)
+    {
+        cout<<"This Matrix is Symmetric Matrix."<<endl;
+    }
+    else
+    {
+        cout<<"This Matrix is not Symmetric Matrix."<<endl;
+    }
+    return 0;
+}
