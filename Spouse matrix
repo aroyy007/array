@@ -1,0 +1,50 @@
+//C++ program to check sparse matrix
+#include<iostream>
+using namespace std;
+int main()
+{
+    int a[100][100],row,col,size,count=0;
+    cout<<"Enter size of Matrix : ";
+    cin>>size;
+    for(row=0;row<size;row++)
+    {
+        for(col=0;col<size;col++)
+        {
+            cout<<"Enter ["<<row<<"]["<<col<<"] : ";
+            cin>>a[row][col]; 
+        }
+        cout<<endl;
+    }
+    cout<<"Matrix is "<<endl;
+    for(row=0;row<size;row++)
+    {
+        cout<<"| ";
+        for(col=0;col<size;col++)
+        {
+            cout<<a[row][col]<<" ";
+        }
+        cout<<"|"<<endl;
+    }
+    cout<<"Calculating Spouse Matrix..... "<<endl;
+    for(row=0;row<size;row++)
+    {
+        for(col=0;col<size;col++)
+        {
+            if(a[row][col]==0)
+            {
+                count++;
+            }
+        }
+    }
+    if(count>=(row*col)/2)
+    {
+        cout<<"Matrix is Spouse Matrix "<<endl;
+    }
+    else
+    {
+        cout<<"Matrix is not Spouse Matrix "<<endl;
+    }
+
+    return 0;
+
+}
